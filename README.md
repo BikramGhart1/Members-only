@@ -7,7 +7,7 @@ is an application where users can sign up and log in to post their posts and bec
 ![Screenshot 2024-08-03 122619](https://github.com/user-attachments/assets/b86b0eec-8154-4fbb-a669-63fa7fb2099a)
 ![Screenshot 2024-08-03 122636](https://github.com/user-attachments/assets/ba9bc749-1743-48c2-bd03-d7a0345e4712)
 ![Screenshot 2024-08-03 122706](https://github.com/user-attachments/assets/bd7c6ef9-531c-4355-b858-934011b7a30b)
-
+![Screenshot 2024-08-03 124013](https://github.com/user-attachments/assets/861f8b0c-94d1-4912-a74d-8eb103e6a7da)
 
 # Technologies used
 1. node js
