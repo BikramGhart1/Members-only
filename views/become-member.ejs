@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/membership.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="heading">
+            <h2><a href="/">astrofog</a></h2>
+        </div>
+        <div>
+            <% if(user){ %>
+                <div class="profile">
+                    <img src="/images/imposter luffy.png" alt="profile" height="55px" width="55px">
+                    <%= user.username %>
+                </div>
+                <div class="menu">
+                    <a href="/posts/create-post">
+                        <p>Create Post</p>
+                    </a>
+                    <a href="/users/log-out">
+                        <p>Log Out</p>
+                    </a>
+                </div>
+                <% } else{%>
+                    <div class="auth">
+                        <button><a href="/users/sign-up">Sign Up</a> </button>
+                        <button><a href="/users/log-in">Log In</a></button>
+                    </div>
+                    <% } %>
+        </div>
+    </aside>
+    <main>
+        <% if(user){ %>
+
+            <h3>Becmoe a memeber</h3>
+            <div>
+                <p>Non members cant see the authors of the posts </p>
+                <p>To be inclusive become a member now</p>
+            </div>
+            <div>
+                <h4>prerequitries</h4>
+                <p>you need to enter the secret code to become a member</p>
+
+            </div>
+
+            <% if(messages.failure){ %>
+                <div style="color: rgb(202, 0, 0);">
+                    <%= messages.failure %>
+                </div>
+                <% } %>
+
+                    <div class="enter-code">
+                        <form action="/membership" method="post">
+                            <label for="code">Enter the code</label>
+                            <input type="text" placeholder="code" name="code" required>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Cancel</button>
+                        </form>
+
+                    </div>
+                    <% }else{ %>
+                        <div>
+                            <p>sign up or login Log in first to become a member</p>
+                        </div>
+                        <% } %>
+
+
+    </main>
+</body>
+
+</html>

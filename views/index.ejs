@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>astrofog</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="heading">
+            <h2><a href="/">astrofog</a></h2>
+        </div>
+        <div>
+            <% if(user){ %>
+                <div class="profile">
+                    <img src="/images/imposter luffy.png" alt="profile" height="55px" width="55px">
+                    <%= user.username %>
+                </div>
+                <div class="menu">
+                    <a href="/posts/create-post">
+                        <p>Create Post</p>
+                    </a>
+                    <a href="/users/log-out">
+                        <p>Log Out</p>
+                    </a>
+                </div>
+                <% } else{%>
+                    <div class="auth">
+                        <button><a href="/users/sign-up">Sign Up</a> </button>
+                        <button><a href="/users/log-in">Log In</a></button>
+                    </div>
+                    <% } %>
+        </div>
+    </aside>
+
+    <main>
+        <section class="post-notice">
+            <div class="notice">
+                <% if(user){ %>
+                    <p>
+                        Welcome back <%= user.username %>
+                    </p>
+                    <% } else{%>
+                        <p>Log in to create posts</p>
+                        <% } %>
+            </div>
+        </section>
+        <section class="member-notice">
+            <div class="notice">
+                <% if(user && user.membership){ %>
+                    <p>You've become a member now</p>
+                    <% }else{ %>
+
+                        <p>Only Members can see the author of the post </p>
+                        <p>So to not get left out become a member</p>
+                        <button><a href="/membership">Become a Member</a></button>
+
+                        <% } %>
+            </div>
+
+        </section>
+        <section class="posts">
+            <% posts.forEach(element=> { %>
+
+                <div class="post">
+                    <div>
+                        <% if(user && user.membership){%>
+                            <h4>
+                                <%= element.username %>
+                            </h4>
+                            <% }else{%>
+                                <h4>Anonymous</h4>
+                                <% }%>
+                    </div>
+                    <div>
+                        <h3>
+                            <%=element.title %>
+                        </h3>
+                    </div>
+                    <div>
+                        <p>
+                            <%=element.description %>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <%=element.date%>
+                        </p>
+                    </div>
+                </div>
+                <% }); %>
+
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/create-post.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="heading">
+            <h2><a href="/">astrofog</a></h2>
+
+        </div>
+        <div>
+            <% if(user){ %>
+                <div class="profile">
+                    <img src="/images/imposter luffy.png" alt="profile" height="55px" width="55px">
+                    <%= user.username %>
+                </div>
+                <div class="menu">
+                    <p>Create Post</p>
+                    <a href="/users/log-out">
+                        <p>Log Out</p>
+                    </a>
+                </div>
+                <% } else{%>
+                    <div class="auth">
+                        <button><a href="/users/sign-up">Sign Up</a> </button>
+                        <button><a href="/users/log-in">Log In</a></button>
+                    </div>
+                    <% } %>
+        </div>
+    </aside>
+    <main>
+        <form action="/posts/create-post" method="post" class="post-form">
+            <h2>Create post</h2>
+            <div>
+                <input type="text" placeholder="Title*" name="title" required>
+
+            </div>
+            <div>
+                <h3>Body</h3>
+                <textarea id="" placeholder="body" name="desc"></textarea>
+
+            </div>
+            <div class="buttons">
+                <button type="reset"><a href="/">Cancel</a></button>
+                <button type="submit">Post</button>
+
+            </div>
+
+        </form>
+    </main>
+
+</body>
+
+</html>

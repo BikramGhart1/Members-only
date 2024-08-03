@@ -1,0 +1,34 @@
+main {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 5%; */
+    height: 60vh;
+}
+
+.enter-code {
+    margin-top: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-code button {
+    padding: 0;
+    /* width: max-content; */
+    width: 55px;
+    height: 25px;
+    margin-top: 3%;
+    background-color: rgb(211, 211, 211);
+}
+
+.enter-code input {
+    padding: 2%;
+    outline: none;
+}
