@@ -20,16 +20,7 @@ const getPosts = async (req, res, next) => {
         next(err)
     }
 }
-// const getOp = async () => {
-//     try {
-//         const { rows } = await pool.query(
-//             'SELECT id,username FROM users JOIN posts ON users.id=posts.uid'
-//         );
-//         return rows;
-//     } catch (err) {
-//         throw err;
-//     }
-// }
+
 module.exports = {
     newPost,
     getPosts,

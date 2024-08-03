@@ -68,7 +68,6 @@ passport.deserializeUser(async (id, done) => {
 
         //fetch data again and send to authenticate function
         const { rows } = await pool.query("SELECT * FROM users WHERE id=$1", [id])
-        console.log(" rows: ", rows);
         const user = rows[0];
         // console.log(user);
 

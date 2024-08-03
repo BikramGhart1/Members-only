@@ -4,7 +4,6 @@ const { body, validationResult } = require('express-validator');
 const userQuery = require('../database/userQueries');
 
 const getMembership = async (req, res) => {
-    console.log('user: ', req.user);
     res.render('become-member.ejs', { user: req.user || null, messages: req.flash() });
 }
 const validatePasscode = [
